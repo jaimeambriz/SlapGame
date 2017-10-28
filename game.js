@@ -31,7 +31,7 @@ var sagat = new Player("Sagat", 140, )
 var ryu = new Player("Ryu", 140, )
 var items = {
     hadouken: new Item("Hadouken", 50, "Blast of energy"),
-    tatsumaki: new Item("Tatsumaki", 40, "Super powerfull spinnig n kick"),
+    tatsumaki: new Item("Tatsumaki", 40, "Super powerfull spinningkick"),
     shoryuken: new Item("Shoryouken", 35, "Awesome upper cut"),
     tigerGenocide: new Item("Tiger Genocide", 50 ,"7 hit combo"),
     tigerUppercut: new Item("Tiger Uppercut", 40, "Super strong uppercut"),
