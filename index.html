@@ -1,12 +1,65 @@
 <html>
+
 <head>
 	<title>Slap Object Game</title>
-	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="">
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="game.css">
 </head>
+
 <body>
-	
-	<script src=""></script>
+	<div class="container-fluid background">
+		<div class="row player-input">
+			<div class="col-sm-2">
+				<button>
+					<h2 id"player-name">--</h2>
+					<h3>Health
+						<h3 id="health">--</h3>
+					</h3>
+					<h4>Hits
+						<h4 id="hits">--</h4>
+					</h4>
+				</button>
+			</div>
+			<div class="col-sm-1">
+				<button type="input" onclick="slap('superKick')">SuperKick</button>
+			</div>
+			<div class="col-sm-1 text-center">
+				<button type="input" onclick="slap('kick')">kick</button>
+			</div>
+			<div class="col-sm-1">
+				<button type="input" onclick="slap('punch')">punch</button>
+			</div>
+			<div class="col-sm-1">
+				
+			</div>
+			<div class="col-sm-1">
+				
+			</div>
+			<div class="col-sm-1">
+				
+			</div>
+			<div class="col-sm-4 comphealth">
+				<button>
+					<h2 id="target-name">--</h2>
+					<h3>Health
+						<h3 id="comphealth">--</h3>
+					</h3>
+					<h4>Hits
+						<h4 id="comphits">--</h4>
+					</h4>
+				</button>
+			</div>
+		</div>
+		<!-- <div class="col-sm-12">
+			<span class="text-center">
+				<span id="victoryStatus" class="text-center" style=color:white;></span>
+			</span>
+		</div>
+	</div>
+	<div class="footer"></div>
+	</div> -->
+		<script src="game.js"></script>
 </body>
+
 </html>

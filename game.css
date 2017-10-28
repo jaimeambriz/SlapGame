@@ -1,1 +1,22 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+/* *{
+    outline: solid 1px red;
+} */
+body{
+    background-image: url("https://cdn.wallpapersafari.com/84/8/IpJjXr.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.inputs{
+    height: 25%;
+}
+.footer{
+    position:fixed;
+    bottom: 0;
+    width:100%;
+}
+.comphealth{
+    text-align: right;
+}
