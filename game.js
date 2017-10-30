@@ -21,9 +21,14 @@ function slap(input) {
 update()
 
 function update() {
+    if(compHealth < 1){
+        document.getElementById("comphealth").innerText = "Knockout"
+    }else if (compHealth >1) {
+        document.getElementById("comphealth").innerText = compHealth
+    }
+        
     document.getElementById("health").innerText = health
     document.getElementById("hits").innerText = hits
-    document.getElementById("comphealth").innerText = compHealth
     document.getElementById('comphits').innerText = compHits
     document.getElementById("target-name").innerText = targetName
     // document.getElementById("vitory-status").innerText =victoryStatus
