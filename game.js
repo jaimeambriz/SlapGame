@@ -4,7 +4,7 @@ var targetName = "Sagat"
 // var input = ""
 var compHealth = 200
 var compHits = 0
-var victoryStatus = "You Win"
+// var victoryStatus = "You Win"
 function slap(input) {
     if (compHealth > 0) {
         if (input == "uppercut") {
@@ -61,12 +61,6 @@ function Item(name, damage, description) {
     this.description = description
 }
 
-// function giveSpecialMove() {
-//     ryu.items.push(items.hadouken, items.shoryuken, items.tatsumaki)
-//     sagat.items.push(items.tigerUppercut, items.tigerShot, items.tigerGenocide)
-
-// }
-// giveSpecialMove()
 
 function addMods(player) {
     var totalDamage = 1
@@ -84,7 +78,6 @@ function giveItem(item) {
     var out = ""
     if (item == "hadouken") {
         out = ryu.items.push(items.hadouken)
-        console.log(out)
     } else if (item == "tatsumaki") {
         out = ryu.items.push(items.tatsumaki)
     } else {
