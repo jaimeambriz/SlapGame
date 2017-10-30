@@ -19,4 +19,15 @@ body{
 }
 .comphealth{
     text-align: right;
+    color: white;
 }
+.player-health{
+    color: white;
+}
+.kick{
+    padding-left:3.3rem;
+}
+.tatsumaki{
+    padding-left:6.1rem;
+}
+

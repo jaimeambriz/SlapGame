@@ -1,38 +1,37 @@
-var health = 100
+var health = 200
 var hits = 0
 var targetName = "Sagat"
 // var input = ""
-var compHealth = 100
+var compHealth = 200
 var compHits = 0
+var victoryStatus = "You Win"
 function slap(input) {
-   var victoryStatus = "You win"
-    if (input == "superKick" && compHealth > 0) {
-        compHealth -= 20 * addMods(ryu)
-    } else if (input == "kick" && compHealth > 0) {
-        compHealth -= 10 * addMods(ryu)
-    } else if (input == "punch" && compHealth > 0){
-        compHealth -= 1 * addMods(ryu)
-    }else {
-        return victoryStatus
+    if (compHealth > 0) {
+        if (input == "uppercut") {
+            compHealth -= 20 * addMods(ryu)
+        } else if (input == "kick") {
+            compHealth -= 10 * addMods(ryu)
+        } else if (input == "punch") {
+            compHealth -= 1 * addMods(ryu)
+        }
+        compHits++
+        update()
     }
-    compHits++
-    update()
 }
 update()
 
 function update() {
-    // document.getElementById("vitory-status").innerText =victoryStatus
     document.getElementById("health").innerText = health
     document.getElementById("hits").innerText = hits
-    // document.getElementById("victoryStatus").innerHTML = name
     document.getElementById("comphealth").innerText = compHealth
     document.getElementById('comphits').innerText = compHits
     document.getElementById("target-name").innerText = targetName
+    // document.getElementById("vitory-status").innerText =victoryStatus
 }
 
 // page 2
-var sagat = new Player("Sagat", 140, )
-var ryu = new Player("Ryu", 140, )
+var sagat = new Player("Sagat", 200, )
+var ryu = new Player("Ryu", 200, )
 var items = {
     hadouken: new Item("Hadouken", 2.2, "Blast of energy"),
     tatsumaki: new Item("Tatsumaki", 1.3, "Super powerfull spinningkick"),
@@ -72,19 +71,18 @@ function addMods(player) {
             totalDamage = damage
         }
     }
-    console.log(damage)
     return totalDamage
 }
 addMods(ryu)
 
-function giveItem(item){
- var out = ""
-    if(item == "hadouken"){
+function giveItem(item) {
+    var out = ""
+    if (item == "hadouken") {
         out = ryu.items.push(items.hadouken)
         console.log(out)
-    }else if(item == "tatsumaki"){
+    } else if (item == "tatsumaki") {
         out = ryu.items.push(items.tatsumaki)
-    }else {
+    } else {
         out = ryu.items.push(items.shoryuken)
     }
     return out
