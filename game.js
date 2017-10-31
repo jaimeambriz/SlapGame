@@ -1,5 +1,5 @@
 //service
-var sagat = new Player("Sagat", 200, 0 )
+var sagat = new Player("Sagat", 200, 0)
 var ryu = new Player("Ryu", 200, 0)
 var items = {
     hadouken: new Item("Hadouken", 2.2, "Blast of energy", "Ultra"),
@@ -7,7 +7,7 @@ var items = {
     shoryouken: new Item("Shoryouken", 1.7, "Awesome upper cut", "special"),
     tigerGenocide: new Item("Tiger Genocide", 2.3, "7 hit combo"),
     tigerUppercut: new Item("Tiger Uppercut", 1.5, "Super strong uppercut"),
-    tigerShot: new Item("Tiger Shot", 1.2, "Fire Blast")  
+    tigerShot: new Item("Tiger Shot", 1.2, "Fire Blast")
 }
 //serevice and controller
 function slap(input) {
@@ -23,16 +23,16 @@ function slap(input) {
         update()
     }
 }
-//service
+//controller
 function update() {
-    if(sagat.health < 1){
+    if (sagat.health < 1) {
         document.getElementById("comphealth").innerText = "Knockout"
-    }else if (sagat.health >1) {
+    } else if (sagat.health > 1) {
         document.getElementById("comphealth").innerText = sagat.health
     }
     document.getElementById("health").innerText = ryu.health
     document.getElementById("hits").innerText = ryu.hits
-    document.getElementById('comphits').innerText =sagat.hits
+    document.getElementById('comphits').innerText = sagat.hits
     document.getElementById("target-name").innerText = sagat.name
     document.getElementById("player-name").innerText = ryu.name
 }
@@ -42,7 +42,7 @@ function Player(name, health, hits) {
     this.name = name;
     this.health = health;
     this.hits = hits;
-    this.items = []    
+    this.items = []
 }
 //service
 function Item(name, damage, description, button) {
@@ -69,9 +69,9 @@ function giveItem(item) {
         out = ryu.items.push(items.hadouken)
     } else if (item == "tatsumaki") {
         out = ryu.items.push(items.tatsumaki)
-    } else if (item == "shoryouken"){
+    } else if (item == "shoryouken") {
         out = ryu.items.push(items.shoryouken)
-    
+
     }
 }
 update()

@@ -1,6 +1,9 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Slap Object Game</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	 crossorigin="anonymous">
@@ -22,24 +25,24 @@
 				</div>
 			</div>
 			<div class="col-sm-1">
-				<button type="input" onclick="slap('hadouken')">Hadouken</button>
+				<button type="input" onclick="app.controllers.slapController.slap('hadouken')">Hadouken</button>
 			</div>
 			<div class="col-sm-2 text-center kick">
-				<button type="input" onclick="slap('tatsumaki')">Tatsumaki</button>
+				<button type="input" onclick="app.controllers.slapController.slap('tatsumaki')">Tatsumaki</button>
 			</div>
 			<div class="col-sm-2">
-				<button type="input" onclick="slap('shoryouken')">Shoryouken</button>
+				<button type="input" onclick="app.controllers.slapController.slap('shoryouken')">Shoryouken</button>
 			</div>
 			<div class="col-sm-1">
-				<button onclick="giveItem('hadouken')">Ultra</button>
+				<button onclick="app.controllers.slapController.giveItem('hadouken')">Ultra</button>
 
 			</div>
 			<div class="col-sm-1 tatsumaki">
-					<button onclick="giveItem('tatsumaki')">Power</button>
+				<button onclick="app.controllers.slapController.giveItem('tatsumaki')">Power</button>
 
 			</div>
 			<div class="col-sm-1">
-				<button onclick="giveItem('shoryouken')">Special</button>
+				<button onclick="app.controllers.slapController.giveItem('shoryouken')">Special</button>
 
 			</div>
 			<div class="col-sm-2 comphealth">
@@ -54,18 +57,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-center" id="items">
-		<!-- </div>
-		<h1 class="text-center" id="victory-status"></h1> -->
-		<!-- <div class="col-sm-12">
-			<span class="text-center">
-				<span id="victoryStatus" class="text-center" style=color:white;></span>
-			</span>
-		</div>
-	</div>
-	<div class="footer"></div>
-	</div> -->
-		<script src="game.js"></script>
+
+		<!-- <script src="game.js"></script> -->
+
+		<script src="app/slap/slap-service.js"></script>
+
+		<script src="app/slap/slap-controller.js"></script>
+
+		<script src="app/init.js"></script>
+
 </body>
 
 </html>
