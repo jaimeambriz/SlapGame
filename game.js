@@ -1,67 +1,56 @@
-var health = 200
-var hits = 0
-var targetName = "Sagat"
-// var input = ""
-var compHealth = 200
-var compHits = 0
-// var victoryStatus = "You Win"
-function slap(input) {
-    if (compHealth > 0) {
-        if (input == "uppercut") {
-            compHealth -= 20 * addMods(ryu)
-        } else if (input == "kick") {
-            compHealth -= 10 * addMods(ryu)
-        } else if (input == "punch") {
-            compHealth -= 1 * addMods(ryu)
-        }
-        compHits++
-        update()
-    }
-}
-update()
-
-function update() {
-    if(compHealth < 1){
-        document.getElementById("comphealth").innerText = "Knockout"
-    }else if (compHealth >1) {
-        document.getElementById("comphealth").innerText = compHealth
-    }
-        
-    document.getElementById("health").innerText = health
-    document.getElementById("hits").innerText = hits
-    document.getElementById('comphits').innerText = compHits
-    document.getElementById("target-name").innerText = targetName
-    // document.getElementById("vitory-status").innerText =victoryStatus
-}
-
-// page 2
-var sagat = new Player("Sagat", 200, )
-var ryu = new Player("Ryu", 200, )
+//service
+var sagat = new Player("Sagat", 200, 0 )
+var ryu = new Player("Ryu", 200, 0)
 var items = {
     hadouken: new Item("Hadouken", 2.2, "Blast of energy"),
     tatsumaki: new Item("Tatsumaki", 1.3, "Super powerfull spinningkick"),
     shoryuken: new Item("Shoryouken", 1.7, "Awesome upper cut"),
     tigerGenocide: new Item("Tiger Genocide", 2.3, "7 hit combo"),
     tigerUppercut: new Item("Tiger Uppercut", 1.5, "Super strong uppercut"),
-    tigerShot: new Item("Tiger Shot", 1.2, "Fire Blast")
-
+    tigerShot: new Item("Tiger Shot", 1.2, "Fire Blast")  
 }
-function Player(name, health, ) {
+//serevice and controller
+function slap(input) {
+    if (sagat.health > 0) {
+        if (input == "hadouken") {
+            sagat.health -= 20 * addMods(ryu)
+        } else if (input == "tatsumaki") {
+            sagat.health -= 10 * addMods(ryu)
+        } else if (input == "shoryouken") {
+            sagat.health -= 1 * addMods(ryu)
+        }
+        sagat.hits++
+        update()
+    }
+}
+//service
+function update() {
+    if(sagat.health < 1){
+        document.getElementById("comphealth").innerText = "Knockout"
+    }else if (sagat.health >1) {
+        document.getElementById("comphealth").innerText = sagat.health
+    }
+    document.getElementById("health").innerText = ryu.health
+    document.getElementById("hits").innerText = ryu.hits
+    document.getElementById('comphits').innerText =sagat.hits
+    document.getElementById("target-name").innerText = sagat.name
+    document.getElementById("player-name").innerText = ryu.name
+}
+
+//service
+function Player(name, health, hits) {
     this.name = name;
     this.health = health;
-    this.items = []
-
-
-
+    this.hits = hits;
+    this.items = []    
 }
-
+//service
 function Item(name, damage, description) {
     this.name = name;
     this.damage = damage;
     this.description = description
 }
-
-
+//service
 function addMods(player) {
     var totalDamage = 1
     for (var i = 0; i < player.items.length; i++) {
@@ -73,16 +62,14 @@ function addMods(player) {
     return totalDamage
 }
 addMods(ryu)
-
+//service and coontroller
 function giveItem(item) {
-    var out = ""
     if (item == "hadouken") {
         out = ryu.items.push(items.hadouken)
     } else if (item == "tatsumaki") {
         out = ryu.items.push(items.tatsumaki)
-    } else {
+    } else if (item == "shoryuken"){
         out = ryu.items.push(items.shoryuken)
     }
-    return out
 }
-
+update()
