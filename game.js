@@ -2,9 +2,9 @@
 var sagat = new Player("Sagat", 200, 0 )
 var ryu = new Player("Ryu", 200, 0)
 var items = {
-    hadouken: new Item("Hadouken", 2.2, "Blast of energy"),
-    tatsumaki: new Item("Tatsumaki", 1.3, "Super powerfull spinningkick"),
-    shoryuken: new Item("Shoryouken", 1.7, "Awesome upper cut"),
+    hadouken: new Item("Hadouken", 2.2, "Blast of energy", "Ultra"),
+    tatsumaki: new Item("Tatsumaki", 1.3, "Super powerfull spinningkick", "Power"),
+    shoryouken: new Item("Shoryouken", 1.7, "Awesome upper cut", "special"),
     tigerGenocide: new Item("Tiger Genocide", 2.3, "7 hit combo"),
     tigerUppercut: new Item("Tiger Uppercut", 1.5, "Super strong uppercut"),
     tigerShot: new Item("Tiger Shot", 1.2, "Fire Blast")  
@@ -45,10 +45,11 @@ function Player(name, health, hits) {
     this.items = []    
 }
 //service
-function Item(name, damage, description) {
+function Item(name, damage, description, button) {
     this.name = name;
     this.damage = damage;
     this.description = description
+    this.button = button
 }
 //service
 function addMods(player) {
@@ -68,8 +69,9 @@ function giveItem(item) {
         out = ryu.items.push(items.hadouken)
     } else if (item == "tatsumaki") {
         out = ryu.items.push(items.tatsumaki)
-    } else if (item == "shoryuken"){
-        out = ryu.items.push(items.shoryuken)
+    } else if (item == "shoryouken"){
+        out = ryu.items.push(items.shoryouken)
+    
     }
 }
 update()
